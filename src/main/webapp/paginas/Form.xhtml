@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>PrimeFaces_Journey</title>
+    <h:outputStylesheet library="css" name="file.css"/>
+</h:head>
+
+<h:body>
+
+    <h:form id="form" >
+        <p:tabView>
+            <p:tab title="formulário">
+                <p:panelGrid columns="2" layout="grid" style="margin-top: 120px;"
+                             styleClass="ui-fluid">
+
+                    <p:outputLabel value="Nome"/> <p:inputText size="45"/>
+                    <p:outputLabel value="E-Mail"/> <p:inputText size="45"/>
+                    <p:outputLabel value="CPF"/> <p:inputMask mask="999.999.999-99" size="10"/>
+
+                    <p:commandButton value="Salvar" action="#{msg.salvar()}" icon="pi pi-check" update="messages">
+                        <p:confirm header="Cabeçalho" message="Tem certeza que deseja salvar?" icon="pi pi-exclamation-triangle"/>
+                    </p:commandButton>
+                    <p:messages id="messages" autoUpdate="true"/>
+
+                    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350" >
+                        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" />
+                    </p:confirmDialog>
+                </p:panelGrid>
+            </p:tab>
+
+            <p:tab title="imagem">
+                <p:graphicImage library="imagens" name="logoCauzy.png" width="250px"/>
+
+            </p:tab>
+        </p:tabView>
+
+    </h:form>
+</h:body>
+</html>

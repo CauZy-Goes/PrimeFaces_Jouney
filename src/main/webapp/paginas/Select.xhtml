@@ -17,9 +17,16 @@
             <h:outputText value="Evento"/>
             <p:selectOneMenu value="#{atividadeMB.atividade.tipoAtividade}" filter="true">
                 <f:selectItems value="#{atividadeMB.atividades}" var="a" itemValue="#{a}" itemLabel="#{a.descricao}"/>
+                <p:ajax event="click" update="input" process="@this"/>
             </p:selectOneMenu>
+
             <p:commandButton value="Enviar" update="label"/>
             <p:outputLabel value="#{atividadeMB.atividade.tipoAtividade.descricao}" id="label"/>
+
+            <h:panelGroup id="input">
+                <p:inputMask mask="999.999.999-99" value="CPF" id="cpf" rendered="#{atividadeMB.atividade.tipoAtividade.descricao eq 'curso'}" required="true"/>
+                <p:inputMask mask="99.999.999/9999-99" value="CNPF" id="cnpj" rendered="#{atividadeMB.atividade.tipoAtividade eq 'minicurso'}" required="true"/>
+            </h:panelGroup>
         </p:panelGrid>
     </h:form>
 </h:body>
