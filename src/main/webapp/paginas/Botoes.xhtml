@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>PrimeFaces_Journey</title>
+    <h:outputStylesheet library="css" name="file.css"/>
+</h:head>
+
+<h:body>
+
+    <!--    <header>-->
+    <!--        <div style="float: left; margin-left: 10px">-->
+    <!--            <h:graphicImage library="imagens" name="logoCauzy.png" width="250px"/>-->
+    <!--        </div>-->
+    <!--    </header>-->
+
+    <h1>Campos De password</h1>
+
+    <!--    <p:message for="senha" autoUpdate="true" id="msg"/>-->
+
+    <h1>Barra de botoes</h1>
+    <h:form id="form" >
+        <p:toolbar>
+            <f:facet name="left">
+                <p:button value="Novo" icon="ui_icon-document"/>
+                <p:button value="Abrir" icon="ui_icon-folder-open"/>
+                <span class="ui-separator">
+                    <span class="ui-icon ui-icon-grip-dotted-vertical"/>
+                </span>
+                <p:button  icon="ui_icon-disk"/>
+                <p:button  icon="ui_icon-trash"/>
+                <p:button  icon="ui_icon-print"/>
+
+            </f:facet>
+
+            <f:facet name="right">
+                <p:menuButton value="Opções">
+                    <p:menuitem value="Salvar"/>
+                    <p:menuitem value="sei la"/>
+                    <p:menuitem value="testes"/>
+                </p:menuButton>
+            </f:facet>
+        </p:toolbar>
+    </h:form>
+</h:body>
+</html>

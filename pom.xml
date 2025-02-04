@@ -42,6 +42,6 @@
 
   </dependencies>
   <build>
-    <finalName>testando</finalName>
+    <finalName>PrimeFaces_Journey</finalName>
   </build>
 </project>

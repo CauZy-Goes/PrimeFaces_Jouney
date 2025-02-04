@@ -5,19 +5,26 @@
 
 <h:head>
     <title>PrimeFaces</title>
+    <h:outputStylesheet library="css" name="file.css"/>
 </h:head>
 
 <h:body>
+
+    <p:graphicImage library="imagens" name="logoCauzy.png" width="250px"/>
+
     <h:form id="form">
         <h1>Informações De Cadastro</h1>
-        <h:panelGrid columns="2">
-            <p:outputLabel value="Nome"/>
-            <p:inputText value="#{bean.pessoa.nome}"/>
-            <p:outputLabel value="E-Mail"/>
-            <p:inputText value="#{bean.pessoa.email}"/>
-            <p:outputLabel/>
-            <p:commandButton value="Adicionar" action="#{bean.Adicionar()}" update="form tabelaPessoa"/>
-        </h:panelGrid>
+
+        <p:panel header="Cadastro De CLientes">
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Nome"/>
+                <p:inputText value="#{bean.pessoa.nome}" size="50"/>
+                <p:outputLabel value="E-Mail"/>
+                <p:inputText value="#{bean.pessoa.email}" size="50"/>
+                <p:outputLabel/>
+                <p:commandButton value="Adicionar" action="#{bean.Adicionar()}" update="form tabelaPessoa"/>
+            </h:panelGrid>
+        </p:panel>
     </h:form>
 
     <h1>Lista De Pessoas</h1>
@@ -25,8 +32,11 @@
     <p:dataTable value="#{bean.pessoas}" var="p" border="1" id="tabelaPessoa">
         <p:column headerText="Nome">#{p.nome}</p:column>
         <p:column headerText="Email">#{p.email}</p:column>
-        <p:column headerText="Editar">
+        <p:column headerText="Editar" width="80">
             <p:button value="Editar" outcome="/paginas/Sucesso.xhtml?parametro=#{p.nome}"/>
+        </p:column>
+        <p:column headerText="Editar" width="80">
+            <p:button value="pass" outcome="/paginas/Password.xhtml"/>
         </p:column>
     </p:dataTable>
 

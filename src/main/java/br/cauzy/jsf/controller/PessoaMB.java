@@ -23,12 +23,10 @@ public class PessoaMB implements Serializable {
 
     // Adiciona a pessoa à lista e limpa o formulário
     public String Adicionar() {
-        System.out.println("entrou");
         pessoas.add(pessoa);
-        System.out.println(pessoa.getNome() + pessoa.getEmail());
         Limpar();
-        System.out.println(pessoa.getNome() + pessoa.getEmail());
-        return "index";  // Aqui, faça a navegação para a página index.xhtml ou qualquer outro caminho
+
+        return "paginas/Sucesso";  // Aqui, faça a navegação para a página index.xhtml ou qualquer outro caminho
     }
 
     // Limpa o formulário (reseta a pessoa)
